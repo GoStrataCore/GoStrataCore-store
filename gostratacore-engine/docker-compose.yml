@@ -2,8 +2,8 @@ version: "3.7"
 
 services:
 
-  engine:
-    image: ghcr.io/gostratacore/gostratumengine:latest
+  gostratacore-engine:
+    build: https://github.com/GoStrataCore/gostratumengine.git
     restart: unless-stopped
 
     ports:
