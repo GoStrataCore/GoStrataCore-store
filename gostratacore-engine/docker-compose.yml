@@ -24,6 +24,9 @@ services:
     environment:
       - APP_DATA_DIR=${APP_DATA_DIR}
 
+    networks:
+      - umbrel_main_network   # <-- ADD THIS
+
 networks:
   umbrel_main_network:
     external: true
