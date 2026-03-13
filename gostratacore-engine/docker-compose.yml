@@ -1,9 +1,9 @@
 version: "3.7"
 
 services:
+
   engine:
     image: ghcr.io/gostratacore/gostratumengine:latest
-    container_name: gostratacore-engine
     restart: unless-stopped
 
     ports:
