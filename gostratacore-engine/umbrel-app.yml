@@ -1,6 +1,6 @@
 manifestVersion: 1
 id: gostratacore-engine
-category: mining
+category: bitcoin
 name: GSC Engine
 version: "1.0.0"
 tagline: Multi-coin Stratum mining engine
@@ -16,12 +16,10 @@ description: >-
    - eCash
    - DigiByte
 
-  Designed for solo pools, home miners and StratumOS deployments.
-
 developer: GoStrataCore
 website: https://github.com/GoStrataCore/gostratumengine
 repo: https://github.com/GoStrataCore/gostratumengine
-support: https://github.com/GoStrataCore/gostratumengine/issues
+support: https://github.com/GoStrataCore/gostratumengine
 
 dependencies: []
 
@@ -33,5 +31,7 @@ gallery: []
 path: ""
 defaultUsername: ""
 defaultPassword: ""
+
+backupIgnore: []
 
 submitter: GoStrataCore
