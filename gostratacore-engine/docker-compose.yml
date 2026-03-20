@@ -11,6 +11,7 @@ services:
       - umbrel_main_network
 
   engine:
+    user: "1000:1000"
     image: ghcr.io/gostratacore/gostratumengine:1.2.8
     restart: unless-stopped
 
