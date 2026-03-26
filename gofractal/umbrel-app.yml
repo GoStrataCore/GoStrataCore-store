@@ -36,7 +36,7 @@ description: >-
 
   Status:
     - DEVELOPMENT build: verify payout addresses before mining.
-developer: Ellevix
+developer: GoStrataCore
 website: https://github.com/Ellevix/Mining-community-store
 repo: https://github.com/Ellevix/Mining-community-store
 support: https://github.com/Ellevix/Mining-community-store
