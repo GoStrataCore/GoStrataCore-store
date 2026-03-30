@@ -16,7 +16,6 @@ services:
     image: alpine:3.19
     volumes:
       - ${APP_DATA_DIR}/data:/data
-      - ${APP_DATA_DIR}:/appdata
     environment:
       APPS_SUBNET: "${NETWORK_IP}/16"
       RPC_USER: "fractal"
@@ -225,7 +224,7 @@ services:
         aliases:
           - gofractal-app
     volumes:
-      - ${APP_DATA_DIR}/data:/data
+        - ${APP_DATA_DIR}/data:/data
     environment:
       NETWORK_IP: "${NETWORK_IP}"
       BCH_RPC_HOST: "fractal"
