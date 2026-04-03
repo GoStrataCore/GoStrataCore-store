@@ -208,7 +208,7 @@ services:
       - ${APP_DATA_DIR}/data/pool/www:/www
 
   app:
-    image: ghcr.io/gostratacore/gofractal-app:0.3.8
+    image: ghcr.io/gostratacore/gofractal-app:0.3.9
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 30s
@@ -226,6 +226,7 @@ services:
           - gofractal-app
     volumes:
       - ${APP_DATA_DIR}/data:/data
+      - /var/lib/5tratumos/apps/gostratacore-engine:/var/lib/5tratumos/apps/gostratacore-engine  # 👈 ADD THIS LINE
     environment:
       NETWORK_IP: "${NETWORK_IP}"
       NODE_RPC_HOST: "fractal"
