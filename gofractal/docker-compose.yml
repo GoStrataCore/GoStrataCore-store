@@ -16,6 +16,7 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data:/data
       - ${APP_DATA_DIR}:/appdata
+      - ${APP_DATA_DIR}/data/shared:/shared
     environment:
       APPS_SUBNET: "${NETWORK_IP}/16"
       RPC_USER: "fractal"
@@ -208,7 +209,7 @@ services:
       - ${APP_DATA_DIR}/data/pool/www:/www
 
   app:
-    image: ghcr.io/gostratacore/gofractal-app:0.3.58
+    image: ghcr.io/gostratacore/gofractal-app:0.3.59
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 30s

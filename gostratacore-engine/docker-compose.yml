@@ -18,7 +18,7 @@ services:
              chown -R 1000:1000 /data /shared"
     volumes:
       - ${APP_DATA_DIR}/data:/data
-      - /var/lib/5tratumos/shared:/shared
+      - ${APP_DATA_DIR}/data/shared:/shared
     restart: "no"
 
   engine:
@@ -36,7 +36,7 @@ services:
 
     volumes:
       - ${APP_DATA_DIR}/data/pool/logs:/pool/logs
-      - /var/lib/5tratumos/shared/gostratacore/coins:/pool/coins
+      - ${APP_DATA_DIR}/data/shared/gostratacore/coins:/pool/coins
 
     environment:
       - APP_DATA_DIR=${APP_DATA_DIR}
