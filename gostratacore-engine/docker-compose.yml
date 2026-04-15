@@ -22,7 +22,7 @@ services:
     restart: "no"
 
   engine:
-    image: ghcr.io/gostratacore/gostratumengine:1.7.2
+    image: ghcr.io/gostratacore/gostratumengine:1.7.3
     restart: unless-stopped
 
     depends_on:
