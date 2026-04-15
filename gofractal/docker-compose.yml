@@ -208,14 +208,27 @@ services:
       - ${APP_DATA_DIR}/data/pool/config:/config:ro
       - ${APP_DATA_DIR}/data/pool/www:/www
 
+  init-shared-permissions:
+    image: alpine:3.19
+    command: >
+      sh -c "mkdir -p /shared/gostratacore/coins &&
+             chown -R 1000:1000 /shared"
+    volumes:
+      - ${APP_DATA_DIR}/data/shared:/shared
+    restart: "no"
+
   app:
-    image: ghcr.io/gostratacore/gofractal-app:0.3.60
+    image: ghcr.io/gostratacore/gofractal-app:0.3.61
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 30s
     depends_on:
-      - fractal
-      - ckpool
+      fractal:
+        condition: service_started
+      ckpool:
+        condition: service_started
+      init-shared-permissions:
+        condition: service_completed_successfully
     ports:
       - "32122:3000/tcp"
     networks:
@@ -228,6 +241,7 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data:/data
       - ${APP_DATA_DIR}/data/pool/config:/config:ro
+      - ${APP_DATA_DIR}/data/shared:/shared
       - /var/lib/5tratumos/apps/gostratacore-engine:/var/lib/5tratumos/apps/gostratacore-engine
     environment:
       NETWORK_IP: "${NETWORK_IP}"
