@@ -22,7 +22,7 @@ services:
     restart: "no"
 
   engine:
-    image: ghcr.io/gostratacore/gostratumengine:1.7.5
+    image: ghcr.io/gostratacore/gostratumengine:1.7.6
     restart: unless-stopped
 
     depends_on:
@@ -37,6 +37,7 @@ services:
       - ${APP_DATA_DIR}/data/pool/logs:/pool/logs
       - /var/lib/5tratumos/shared/gostratacore/coins:/pool/coins
       - /var/lib/5tratumos/apps:/var/lib/5tratumos/apps
+      - /mnt:/mnt
       - /var/run/docker.sock:/var/run/docker.sock
 
     environment:
