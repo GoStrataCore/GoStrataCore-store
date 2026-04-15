@@ -36,7 +36,7 @@ services:
 
     volumes:
       - ${APP_DATA_DIR}/data/pool/logs:/pool/logs
-      - ${APP_DATA_DIR}/data/shared/gostratacore/coins:/pool/coins
+      - /var/lib/5tratumos/shared/gostratacore/coins:/pool/coins
 
     environment:
       - APP_DATA_DIR=${APP_DATA_DIR}
