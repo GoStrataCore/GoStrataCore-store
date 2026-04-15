@@ -218,7 +218,7 @@ services:
     restart: "no"
 
   app:
-    image: ghcr.io/gostratacore/gofractal-app:0.3.62
+    image: ghcr.io/gostratacore/gofractal-app:0.3.63
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 30s
@@ -240,7 +240,7 @@ services:
           - gofractal-app
     volumes:
       - ${APP_DATA_DIR}/data:/data
-      - ${APP_DATA_DIR}/data/pool/config:/config:ro
+      - ${APP_DATA_DIR}/data/pool/config:/config
       - /var/lib/5tratumos/shared:/shared
       - /var/lib/5tratumos/apps/gostratacore-engine:/var/lib/5tratumos/apps/gostratacore-engine
     environment:
