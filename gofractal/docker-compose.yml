@@ -208,7 +208,7 @@ services:
       - ${APP_DATA_DIR}/data/pool/www:/www
 
   app:
-    image: ghcr.io/gostratacore/gofractal-app:0.3.57
+    image: ghcr.io/gostratacore/gofractal-app:0.3.58
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 30s
@@ -226,7 +226,8 @@ services:
           - gofractal-app
     volumes:
       - ${APP_DATA_DIR}/data:/data
-      - /var/lib/5tratumos/apps/gostratacore-engine:/var/lib/5tratumos/apps/gostratacore-engine  # 👈 ADD THIS LINE
+      - ${APP_DATA_DIR}/data/pool/config:/config:ro
+      - /var/lib/5tratumos/apps/gostratacore-engine:/var/lib/5tratumos/apps/gostratacore-engine
     environment:
       NETWORK_IP: "${NETWORK_IP}"
       NODE_RPC_HOST: "fractal"
@@ -234,6 +235,7 @@ services:
       NODE_RPC_USER: "fractal"
       NODE_RPC_PASS: "${APP_PASSWORD}"
       CKPOOL_STATUS_DIR: "/data/pool/www/pool"
+      CKPOOL_CONF_PATH: "/config/ckpool.conf"
       APP_CHANNEL: "STABLE"
       BCHN_IMAGE: "ellevix/fractald:0.3.0"
       CKPOOL_IMAGE: "ghcr.io/getumbrel/docker-ckpool-solo:590fb2a"
