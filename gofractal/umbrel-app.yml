@@ -2,8 +2,8 @@ manifestVersion: 1
 id: gofractal
 category: bitcoin
 name: GoFractal
-version: "0.3.63"
-tagline: Fractal node + solo pool
+version: "0.3.64"
+tagline: Fractal Bitcoin node + solo pool
 description: >-
   Run a Fractal Bitcoin full node and an integrated solo Stratum v1 pool (ckpool) as a single app.
 
@@ -24,7 +24,7 @@ description: >-
 
 
   Notes:
-    - Ensure payout address format matches Fractal requirements.
+    - Ensure payout address format matches Fractal Bitcoin requirements.
     - Solo mining is extremely unlikely to find blocks without significant hashrate.
     - First sync can be slow. SSD strongly recommended.
 
