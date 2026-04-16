@@ -218,7 +218,7 @@ services:
     restart: "no"
 
   app:
-    image: ghcr.io/gostratacore/gofractal-app:0.3.72
+    image: ghcr.io/gostratacore/gofractal-app:0.3.73
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 30s
