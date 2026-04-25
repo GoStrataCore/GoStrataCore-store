@@ -22,7 +22,7 @@ services:
     restart: "no"
 
   engine:
-    image: ghcr.io/gostratacore/gostratumengine:2.0.1
+    image: ghcr.io/gostratacore/gostratumengine:2.0.2
     restart: unless-stopped
 
     depends_on:
@@ -31,6 +31,7 @@ services:
 
     ports:
       - "3333:3333"
+      - "3335:3335"
       - "8080:8080"
 
     volumes:
@@ -43,8 +44,13 @@ services:
 
     networks:
       - umbrel_main_network
+      - gofractal_network
 
 networks:
   umbrel_main_network:
     external: true
     name: umbrel_main_network
+
+  gofractal_network:
+    external: true
+    name: 5tratumos-gofractal_default
